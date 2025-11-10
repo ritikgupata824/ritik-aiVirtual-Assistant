@@ -19,7 +19,7 @@ app.use(cookieParser());
 // ✅ CORS setup (must come before routes)
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"], // frontend origin
+    origin: ["https://virtual-assistant-7sxb.onrender.com"], // frontend origin
     credentials: true, // allow cookies
   })
 );
