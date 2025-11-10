@@ -4,7 +4,7 @@ import axios from "axios";
 export const userDataContext = createContext(null);
 
 function UserContextProvider({ children }) {
-  const serverUrl = import.meta.env.VITE_SERVER_URL || "http://localhost:8000";
+  const serverUrl = import.meta.env.VITE_SERVER_URL || "https://ritik-aivirtual-assistant-backend.onrender.com";
 
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
