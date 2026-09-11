@@ -1,0 +1,23 @@
+# AI Virtual Assistant
+
+A web-based AI Virtual Assistant built with the MERN stack and Gemini API.
+
+## Tech Stack
+
+- React.js
+- Node.js
+- Express.js
+- MongoDB
+- Gemini API
+- JavaScript
+
+## Features
+
+- AI-powered conversations
+- Voice interaction
+- Hindi and English support
+- Responsive user interface
+
+## Project Status
+
+This project is being improved as part of my Frontend AI Engineering learning journey.
