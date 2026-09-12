@@ -168,7 +168,7 @@ Vite serves the UI (typically `http://localhost:5173`). Open that URL, create an
 
 Do these two code edits **only on your machine** so cookies work on `http://localhost`. Do not commit production CORS or cookie settings that would break the deployed app.
 
-1. **CORS origin** in `backend/index.js`: allow `http://localhost:5173` (the file already has a commented localhost example).
+1. **CORS origin** in `backend/index.js`: edit the **active** `cors({ origin: [...] })` near the top of the file so it allows `http://localhost:5173`. That live list currently has only the deployed frontend (`https://virtual-assistant-7sxb.onrender.com`). Do **not** uncomment the large commented-out copy of the Express app at the bottom of the file—that would try to start a second server.
 2. **Auth cookies** in `backend/controllers/auth.controllers.js`: for local HTTP, use `sameSite: "lax"` and `secure: false` (there is already a comment in that file). Restart the backend after changing either file.
 
 Then set `VITE_SERVER_URL=http://localhost:8000` and restart Vite.
