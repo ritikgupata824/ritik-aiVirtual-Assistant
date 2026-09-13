@@ -6,6 +6,7 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn.jsx";
 import Customize from "./pages/Customize.jsx";
 import Customize2 from "./pages/Customize2.jsx";
+import Settings from "./pages/Settings.jsx";
 import Home from "./pages/Home.jsx";
 
 function App() {
@@ -36,6 +37,10 @@ function App() {
       <Route
         path="/customize2"
         element={userData ? <Customize2 /> : <Navigate to="/signup" />}
+      />
+      <Route
+        path="/settings"
+        element={userData ? <Settings /> : <Navigate to="/signup" />}
       />
 
       {/* 🔑 AUTH ROUTES */}

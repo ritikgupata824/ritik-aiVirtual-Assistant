@@ -30,7 +30,7 @@ export const getCurrentUser = async (req, res) => {
 // 🛠️ Update Assistant
 export const updateAssistant = async (req, res) => {
   try {
-    const { assistantName, imageUrl } = req.body;
+    const { assistantName, imageUrl, language } = req.body;
     let assistantImage = imageUrl;
 
     // 🔼 Agar file aayi hai (multer se)
@@ -39,10 +39,18 @@ export const updateAssistant = async (req, res) => {
       if (uploadedImage) assistantImage = uploadedImage;
     }
 
+    const update = {};
+    if (assistantName) update.assistantName = assistantName;
+    if (assistantImage) update.assistantImage = assistantImage;
+    if (language) {
+      const normalized = String(language).toLowerCase();
+      update.language = normalized === "hindi" ? "hindi" : "english";
+    }
+
     // ✅ User update
     const user = await User.findByIdAndUpdate(
       req.userId,
-      { assistantName, assistantImage },
+      update,
       { new: true }
     ).select("-password");
 

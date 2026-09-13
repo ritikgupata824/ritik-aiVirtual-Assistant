@@ -21,6 +21,11 @@ const userSchema = new mongoose.Schema({
         type:String
        
     },
+     language:{
+        type:String,
+        enum:["english","hindi"],
+        default:"english"
+     },
      history:[
         {type:String}
      ]

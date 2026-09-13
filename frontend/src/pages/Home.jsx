@@ -205,6 +205,15 @@ function Home() {
             </button>
 
             <button
+              onClick={() => navigate("/settings")}
+              className="hover:text-blue-600 font-semibold"
+            >
+              {userData?.language?.toLowerCase() === "hindi"
+                ? "सेटिंग्स"
+                : "Settings"}
+            </button>
+
+            <button
               onClick={handleLogout}
               className="hover:text-red-600 font-semibold"
             >
