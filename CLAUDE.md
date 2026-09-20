@@ -29,3 +29,10 @@ Examples:
 - fix: fix a bug
 - docs: update documentation
 - chore: update configuration
+
+## Project-Specific Rules
+- Settings changes must use the existing `/api/user/update` endpoint and `userDataContext`; do not create a duplicate settings API.
+- The Settings form must keep Assistant Name required and trim whitespace before saving.
+- Language selection must be limited to exactly `English` and `Hindi`.
+- Keep Settings focused on assistant preferences; do not add image uploads, animations, avatars, or unrelated UI unless explicitly requested.
+- Run the relevant tests and a production build before committing frontend changes.

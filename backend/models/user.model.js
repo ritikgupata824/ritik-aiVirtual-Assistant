@@ -21,6 +21,10 @@ const userSchema = new mongoose.Schema({
         type:String
        
     },
+    language: {
+        type: String,
+        default: "English"
+    },
      history:[
         {type:String}
      ]

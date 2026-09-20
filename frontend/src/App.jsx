@@ -7,6 +7,7 @@ import SignIn from "./pages/SignIn.jsx";
 import Customize from "./pages/Customize.jsx";
 import Customize2 from "./pages/Customize2.jsx";
 import Home from "./pages/Home.jsx";
+import Settings from "./pages/Settings.jsx";
 
 function App() {
   const { userData, loading } = useContext(userDataContext);
@@ -36,6 +37,12 @@ function App() {
       <Route
         path="/customize2"
         element={userData ? <Customize2 /> : <Navigate to="/signup" />}
+      />
+
+      {/* ⚙️ SETTINGS ROUTE */}
+      <Route
+        path="/settings"
+        element={userData ? <Settings /> : <Navigate to="/signup" />}
       />
 
       {/* 🔑 AUTH ROUTES */}

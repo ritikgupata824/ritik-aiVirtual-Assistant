@@ -30,7 +30,7 @@ export const getCurrentUser = async (req, res) => {
 // 🛠️ Update Assistant
 export const updateAssistant = async (req, res) => {
   try {
-    const { assistantName, imageUrl } = req.body;
+    const { assistantName, imageUrl, language } = req.body;
     let assistantImage = imageUrl;
 
     // 🔼 Agar file aayi hai (multer se)
@@ -42,7 +42,7 @@ export const updateAssistant = async (req, res) => {
     // ✅ User update
     const user = await User.findByIdAndUpdate(
       req.userId,
-      { assistantName, assistantImage },
+      { assistantName, assistantImage, language },
       { new: true }
     ).select("-password");
 
